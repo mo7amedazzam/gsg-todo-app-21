@@ -5,20 +5,17 @@ import 'package:gsg_lc_21_todo/widgets/task_widget.dart';
 import 'package:provider/provider.dart';
 
 class CompleteTasks extends StatelessWidget {
-  List<TaskModel> tasks;
-
   @override
   Widget build(BuildContext context) {
-   return Consumer<TodoProvider>(builder: (context,provider,x){
-     return ListView.builder(
-         itemCount: provider.completeTasks.length,
-         itemBuilder: (context,index){
-           return TaskWidget(
-               provider.completeTasks [index]);
-
-         });
-   });
+    // TODO: implement build
+    return Consumer<TodoProvider>(builder: (context, provider, x) {
+      return ListView.builder(
+          itemCount: provider.completeTasks.length,
+          itemBuilder: (context, index) {
+            return TaskWidget(
+              provider.completeTasks[index],
+            );
+          });
+    });
   }
-
-
 }

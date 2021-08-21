@@ -6,18 +6,18 @@ import 'package:provider/provider.dart';
 
 
 class InCompleteTasks extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return Consumer<TodoProvider>(builder: (context,provider,x){
-      return ListView.builder(
-          itemCount: provider.incompleteTasks.length,
-          itemBuilder: (context,index){
-            return TaskWidget(
-                provider.incompleteTasks [index]);
-
-          });
-    });
+    return Consumer<TodoProvider>(
+      builder: (context, provider, child) {
+        return ListView.builder(
+            itemCount: provider.inCompleteTasks.length,
+            itemBuilder: (context, index) {
+              return TaskWidget(
+                provider.inCompleteTasks[index],
+              );
+            });
+      },
+    );
   }
-
 }
